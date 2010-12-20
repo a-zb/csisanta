@@ -53,7 +53,7 @@ class MainHandler(tornado.web.RequestHandler):
 			if i == "blue": 
 				self.write("Too bad. I can not give to those that refuse my offer. Good bye.")		
 			elif i == "red": 
-				self.write("Yeeees. Excellent choice, kthx ? ")
+				self.write("Yeeees. Excellent choice, are you ready? kthx ? ")
 				self.set_cookie("s1","red")
 			else:
 				self.write("North Pole had a glitch in the snowflake matrix. OMFG.")
