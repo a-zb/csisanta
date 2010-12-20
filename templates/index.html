@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>CSI Santa</title>
+	<script type="text/javascript" charset="utf-8" src="/static/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/static/jq.term.js"></script>
+
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready( function(){
+	$("#term").height($(document).height());
+	$("#term").terminal("/",{custom_prompt:"neo > ", hello_message:"Welcome Neo. So you want to know, what North Pole is ?"});
+});
+</script>
+
+<style type="text/css" media="screen">
+body {
+	margin: 0;
+}
+</style>
+
+</head>
+<body id="bodyid">
+	<div id='term' style="height:100%" width="100%" style="background-color:black;"></div>
+</body>
+</html>
