@@ -7,7 +7,8 @@ import tornado.web
 import os
 from tornado.options import define, options
 
-define ("port", default=1338, help="porty port", type=int)
+define ("port", default=1337, help="porty port", type=int)
+define ("address", default="0.0.0.0", help="dressy address", type=str)
 
 class App(tornado.web.Application):
 	def __init__(self):
@@ -39,7 +40,7 @@ class MainHandler(tornado.web.RequestHandler):
 			elif i == "no":
 				self.write("Very well then. No present for you!!!")
 			else:
-				self.write("It's time to wake up. No present for you!!!")
+				self.write("North Pole had a glitch in the snowflake matrix. OMFG.!!!")
 			return
 		else:
 			v=self.get_cookie("s1")
@@ -52,7 +53,7 @@ class MainHandler(tornado.web.RequestHandler):
 			if i == "blue": 
 				self.write("Too bad. I can not give to those that refuse my offer. Good bye.")		
 			elif i == "red": 
-				self.write("Yeeees. Do you feel like an elf? Tumbling down a chimney hole, kthx ? ")
+				self.write("Yeeees. Excellent choice, kthx ? ")
 				self.set_cookie("s1","red")
 			else:
 				self.write("North Pole had a glitch in the snowflake matrix. OMFG.")
@@ -71,15 +72,14 @@ class MainHandler(tornado.web.RequestHandler):
 				self.write("Your typing is good   ...  but these answers are not your technique. Stop playing around and answer me!!")
 		
 		if v == "red|yes":
-				self.write("Enter in you email to get download links.")
-				self.write("are you able to download the game? ")
+				self.write("Enter in you email to get the download links.")
 				f=open("/tmp/santagift.txt","w")
 				f.write(i)
 				f.close()
 				self.set_cookie("s1","complete")
 		
 		if v == "complete":
-			self.write("We will send 5 download links to your email, 1 per day. Write to supermatrixsanta@gmail.com for help in case you don't get your gift.")
+			self.write("I will send 5 download links to your email, 1 per day. Write to supermatrixsanta@gmail.com for help in case you don't get your gift.")
 			f=open("/tmp/santamail.txt","w")
 			f.write(i)
 			f.close()
